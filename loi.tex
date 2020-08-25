@@ -1,0 +1,135 @@
+\documentclass[a4paper,11pt]{article}
+%\usepackage{arxiv}
+\usepackage{jinstxxx}
+%\usepackage{authblk}
+%\usepackage[utf8]{inputenc} % allow utf-8 input
+%\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+%\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+%\usepackage{booktabs}       % professional-quality tables
+%\usepackage{amsfonts}       % blackboard math symbols
+%\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+%\usepackage{microtype}      % microtypography
+\usepackage{amsmath}
+\usepackage{siunitx}
+%\usepackage{gensymb}
+%\usepackage{multirow}
+%\usepackage{graphicx}
+%\usepackage{textcomp} % CR and registered symbols.
+%\usepackage{soul,color}          % highlight text
+%\usepackage{chngcntr} % to change figure number
+%\usepackage{lineno}
+
+\input{NextDefs.tex}
+\newcommand{\angstrom}{\textup{\AA}}
+
+%\bibliographystyle{naturemag}
+
+\begin{document}
+%\linenumbers
+\title{Towards a low background neutrinoless double beta decay experiment based on a fluorescent bicolor sensor}
+
+%\input{author.tex}
+
+%\input{src4/abstract.tex}
+
+%\keywords{neutrinoless double beta decay ; fluorescent molecular indicator ; barium tagging ; wide field two photon absorption microscopy.}
+%\arxivnumber{1234.56789}
+\notoctrue
+\maketitle
+%\flushbottom
+\notoc
+
+\begin{center}
+\Large
+\textbf{\centering The NEXT collaboration} \\ 
+
+\end{center}
+% keywords
+
+
+\section{Introduction}
+The discovery of neutrinoless double beta decays (\bbonu) would demonstrate that neutrinos are Majorana particles \cite{Majorana:1937}, with a deep impact in particle physics and cosmology. In particular, it could could shed light in one of the deepest mysteries of our current understanding of the Universe, that of the cosmic asymmetry between matter and antimatter \cite{Sakharov1967}. 
+
+The best experiment of the current generation of \bbonu\ searches have obtained limits
+on the the lifetime of a \bbonu\ ($\Tonu$) in the vicinity of \SI{1.07E26}{\yr}. These limits translate into a sensitivity to the effective neutrino mass, which, for the best nuclear matrix elements, scratches the upper bound of the so-called Inverse Hierarchy (IH) of neutrino mass orderings. A full exploration of the IH would require improving the current sensitivity to $\Tonu$ by at least one order of magnitude. Exploration of the normal hierarchy (NH), currently favoured by data, requires a sensitivity at least one order of magnitude larger, 
+\Tonu $\sim$ \SI{E28}{\yr}.
+
+The consequence is that the next generation of \bbonu\ experiments will require a growth in exposure (the product of fiducial mass $M$ and observation time $t$) of one order of magnitude to explore the IH and two orders of magnitude for a substantial exploration of the NH.  At the same time, backgrounds must be reduced {\it at least} by the same order than the increase in exposure. In practice, exploration of the IH requires scaling to experiments with exposures of 1 ton$\cdot$year and backgrounds of 1 event per year in the ROI, and exploration of the NH requires scaling to experiments with exposures of 10 ton$\cdot$year and backgrounds of 0.1 event per year in the ROI. Given that the uncertainty in background estimation becomes also larger as the background expectation tends to zero, it appears that exploration of the NH requires, for all practical purposes, background-free experiments. 
+
+\section{A definitive evidence of double-beta decay: detecting the daughter atom}
+
+In a \bbonu\ decay, the daughter atom is displaced two steps higher in the periodic table w.r.t. its mother. In particular, the decay $\XE \rightarrow \Bapp + 2\ e \, (+ 2\ \overline{\nu}_{e})$, will create a \Bapp cation. No known radioactive process will produce the appearance of such ion in the middle of a detector full of xenon. Furthermore, \Bapp\ appears at the same time than the two electrons emitted in the decay. 
+
+The possibility of barium tagging in a xenon time projection chamber (TPC) was proposed in 1991 by Moe \cite{Moe:1991ik}, and has been extensively investigated for the last two decades \cite{Danilov:2000pp, Sinclair:2011zz,  Mong:2014iya}. Recently
+the nEXO collaboration has demonstrated the imaging and counting of individual barium atoms in solid xenon by scanning a focused laser across a solid xenon matrix deposited on a sapphire window \cite{Chambers:2018srx}. This is a promising step for barium tagging in liquid xenon. The technique originally proposed by Moe and being pursued by nEXO relies on Ba$^+$ fluorescence imaging using two atomic excitation levels in very low density gas. In liquid xenon, recombination is frequent and the barium daughters are distributed across charge states from 0 to 2+ \cite{PhysRevC.92.045504}, with sizeable populations of neutral Ba and  Ba$^+$.  In the high pressure gas phase, however, the initially highly ionized barium daughter quickly captures electrons from neutral xenon, stopping at \Bapp, beyond which recombination is minimal \cite{1997NIMPA.396..360B}. 
+
+A molecule whose response to optical stimulation changes when it forms a supramolecular complex with a specific ion is a fluorescent indicator, and ions thus bound to molecules are generally referred to as being chelated (one also refers to molecules having formed a complex with the ion as ``chelated molecules''). In 2015, Nygren proposed a \Bapp\ sensor based on fluorescent molecular indicators that could be incorporated within a high-pressure gas xenon TPC (HPXe)  \cite{Nygren_2015}, such as those being developed by the 
+NEXT Collaboration \cite{Nygren:2009zz, Alvarez:2012haa, Martin-Albo:2015rhw, Gomez-Cadenas:2019sfa}. The concept  was further developed in \cite{Jones:2016qiq} and followed by an initial proof of concept \cite{McDonald:2017izm} which resolved individual \Bapp\ ions on a scanning surface \cite{McDonald:2017izm} with more than 12 standard deviations. 
+
+After this seminal work, the NEXT collaboration launched an intense R\&D program. Two complementary approaches are being pursued. The GodXilla  R\&D, explores the possibility of a barium-tagging detector based on radio-frequency (RF) carpets whose goal is to focus the \Bapp\ ion in a small scanning region, while the SABAT (Single Atom BArium Tagging) R\&D envisions a cathode fully equipped with sensors and scanned by a movable microscopy system. Both approaches use dry molecular indicators to capture the \Bapp\ ion. Those currently explored by GodXilla are of the type On-Off (\eg, light emission is greatly enhanced for molecules which have chelated an ion  w.r.t. uncoordinated states). SABAT is based in a new type of fluorescent bicolor indicator (FBI) which responds to coordination with \Bapp\ enhancing the emission and shifting its color. 
+
+The LOI summarises the progress achieved and plans of the SABAT approach. A separate LOI is also submitted for GodXilla. It is envisioned that both approach will converge towards an optimised solution for barium tagging in NEXT in the next few years.  
+
+
+\section{Fluorescent bicolor indicators}
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.8\textwidth]{figura2d.png}
+\vspace*{-8mm}
+\caption{{\it Response of FBI}. {\bf a}, emission spectrum of the SF (a control pellet of silica with unchelated FBI molecules deposited in it) and SBF (a pellet with FBI molecules which have chelated \Bapp\ after sublimation of barium perchlorate). Notice that the SF spectrum is scaled a factor $\sim$ 300 w.r.t. the SBF spectrum); {\bf b}, A Z-X profile of SF, showing no signal in the ``deep blue'' region (400,425) nm, where the contribution from unchelated molecules is negligible;  {\bf c}, A Z-X profile of SF, taken in the green region ($\lambda > 450$ nm), showing intense green emission from the unchelated molecules 
+; {\bf d}, A Z-X profile of the sublimated pellet, SBF, showing a clear signal in the ``deep blue'' region (400,425) nm, due to the molecules chelated by the barium perchlorate;  {\bf e}, A Z-X profile of SBF, taken in the green region ($\lambda > 450$ nm), showing intense green emission from both chelated and unchelated molecules. {\bf f}, 3D tomographies of SBF, taken with our TPA microscopy setup, passed through the blue and the green filter. The tomographies reveal the shape of a tiny section (a square of \SI{75}{\micro\meter} size), showing the same landscape for both chelated and unchelated molecules.}
+\label{fig:fbi}
+\end{figure}
+
+The SABAT R\&D is based in a newly synthesised 
+fluorescent bicolor indicator (\textbf{FBI}) \cite{Rivilla:2019vzd, Rivilla:2020cvm}, designed to bind strongly to \Bapp\ and to shine very brightly when complexed with \Bapp\ {\it in dry medium}, so that the chelated indicator emits $\sim$300 times more light than molecules which have not captured the ion. Crucially, {\bf the emission spectrum of the chelated indicator is significantly blue-shifted  with respect to the unchelated species}, allowing a robust separation of both spectra that provides an additional discrimination factor. Figure \ref{fig:fbi} summarises the performance of FBI (see \cite{Rivilla:2019vzd, Rivilla:2020cvm} for a detailed discussion). 
+
+\section{BOLD}
+
+%\begin{wrapfigure}[16]
+\begin{figure}[tbh!]
+%{l}{8.0cm}
+  \centering
+   \includegraphics[scale=0.50]{Bold_v4.png}
+   \vspace*{-3mm}
+   \caption{A scheme of the BOLD detector. An example of a \bbonu\ signal event is shown. The two electrons emitted in the decay (purple) propagate in the dense xenon gas ionising it, and the ionisation electrons drift towards the anode. The \Bapp\ ion drifts much slower towards the cathode, where it is eventually captured and identified by the BTD. See text for more details.}
+  \label{fig:nextbold}
+%\end{wrapfigure}
+\end{figure}
+
+The goal of the SABAT R\&D is to produce a technical design of a 
+detector implementing a fully operative \Bapp\ tagging system, that we call BOLD ({\bf Barium atOm Light Detector)}. 
+
+BOLD will be an electroluminescent TPC, building on the experience acquired with the NEXT series of detectors. It will have three major systems: \textbf{a}, a sensor capable of tagging, with high efficiency, the single \Bapp\ ion produced in a \bbonu\ decay, called the {\bf Barium Tagging Detector (BTD)}; \textbf{b}, a barrel detector, made of optical fibres coated with a suitable wavelength shifter, whose goal is to measure the event energy with high resolution ({\bf Energy Detector}, ED); and \textbf{c}, a tracking detector, capable of measuring with high resolution the barycentre of the event, the {\bf Tracking Detector (TD)}. The information of these three systems is linked to produce the {\bf Delayed Coincidence Trigger, DCT}, which permits suppressing radioactive backgrounds to virtually zero. The suppression of \bbtnu\ to negligible levels is guaranteed by the excellent energy resolution of the detector. 
+
+$\bullet$ \textbf{The BTD} will be located behind the (transparent) TPC cathode and will deploy an array of sensors called Molecular Target Elements (\textbf{MTE}) assembled in a low-mass titanium honeycomb connected to ground. Each MTE will be a tile, made of ITO, of \SI{1}{cm^2} transverse dimensions and \SI{1}{mm} thickness. A self-assembled monolayer (SAM) of FBI indicators will be grown in one of the sides of the tile. The MTEs wil be interrogated by a fast two-photon absorptionTPA laser microscopy system (\textbf{TPAL}), that can scan the MTE in a few seconds, establishing the eventual presence of a single chelated molecule with high signal to noise ratio (SNR). Notice that, unlike previous NEXT configurations, the cathode will be at ground in BOLD. 
+
+$\bullet$ \textbf{The ED} will be made of a layer of double-clad scintillating fibres (Kuraray or St. Gobain are two major manufacturers), of \SI{2}{mm} diameter, running along the axis of the TPC, and readout at each end by \SI{2x2}{mm^2} SiPMs. The fibres will be coated with TPB or other suitable wavelength shifter in order to shift the VUV light emitted by xenon to the blue region (ca \SI{450}{nm}). A fraction of the blue photons entering the fibres will be captured and propagate to the readout by total internal reflection. Those not captured are bounced by the TPB and/or a diffuse reflective layer located behind the fibres, increasing the fraction of photons that reach the sensors. The total optical efficiency of the system can be as large as 5 \%, ensuring enough photon statistics for a very precise energy measurement. 
+
+$\bullet$\textbf{The TD} will be located behind the anode and will be an  array of small SiPMs (possibly \SI{2x2}{mm^2}). The role of the TD is the measurement of the event barycentre, which permits the prediction of the transverse (X,Y) coordinates of the \Bapp\ in the BTD with a precision of $\sim$ \SI{1}{cm^2}, and thus the prediction of the MTE that must be scanned by the TPAL. Notice that the anode is at High Voltage and thus the TD must be located at a distance that will permit the safe degradation of the field. This in turn, implies the use of devices, such as metalenses (ROX-ref) to focus the light in the TP. 
+
+$\bullet$ \textbf{The DCT} is activated by the ED, when the energy of the event is measured to be within the ROI (typically 1 \% FWHM around \Qbb) signalling an event of interest. When this happens, the TD reconstructs the barycentre of the event and computes the time of arrival of the \Bapp\ to the BTD (relying in the time difference between the recording of primary and secondary EL, a standard technique well understood in a EL HPXe). It then sends the coincidence trigger which lowers the voltage of the cathode (normally held at few hundred volts to absorb any positive ion reaching it) to ground, during a time window large enough (about \SI{1}{ms}) to allow that the putative \Bapp\ ion arriving to the cathode can ``cross the gate'', reach the BTD and be captured in one of the MTEs. The location of the MTE which has captured the ion is also known from the barycentre and sent to the TPAL, which scans it. After scanning (in about 
+\SI{10}{\second}), the TPAL sends a signal indicating that a chelated molecule has been found. The signature of a \bbonu\ event is the coincidence between the energy trigger, the time trigger lowering the cathode gate, and the TPAL positive trigger.  {\bf This coincidence reduces the background to virtually zero. }
+
+\section{SABRA and pBOLD}
+
+
+The next steps in the SABAT R\&D program are the construction of two prototypes that will allow us to develop the technical solutions needed for BOLD and demonstrate the feasibility of the detection concepts. These prototypes are called Single Atom Barium-Radium Apparatus (\textbf{SABRA}), and prototype-Bold (\textbf{pBOLD}). SABRA will demonstrate that \textbf{a}, \Bapp\ can be efficiently captured in gas xenon at high pressure by a MTE made of a SAM of FBI indicators and revealed by laser interrogation; pBOLD will demonstrate that physics events can be reconstructed in BOLD with good energy resolution (1\% FWHM at \Qbb) and a barycentre precision of better than \SI{1}{cm^2} and will provide a proof of concept of the delayed coincidence trigger.  
+
+SABRA will use an ion beam producing \Bapp\ ions of low energy, that can be injected in the test chamber through differential pumping, allowing a detailed study of the barium capture efficiency at low pressure. The beam intensity will be determined by single-ion counting using a secondary electron multiplier (SEM) which will be positioned along the beam axis. 
+
+Furthermore, SABRA will include  a tagged radium source. As proposed by L. Arazi, Radium is an ideal surrogate for barium, since  the first and second ionisation energies are almost identical (\SI{5.28}{eV} and \SI{10.15}{eV} for Ra, \SI{5.21}{eV} and \SI{10.0}{eV} for Ba) and the atomic radii of their ideal gas cores are also very close. We have indeed, already shown in\cite{Rivilla:2019vzd, Rivilla:2020cvm} that FBI capture Ra$^{2+}$ efficiently.  This allows the use a \TO\ source to inject \Rapp\ ions directly into the gas phase. This type of sources, made of a silicon wafer (which acts also as a detector) coated with a very thin layer of \TO, finds applications in radiotherapy and can be obtained from specialised companies. A \Rapp\ source allows individual-atom-tagging (through the alpha particle emitted in the decay), which can be correlated with the observation of a \Rapp\ in the detector. It also allows a detailed study of the barium capture efficiency at high pressure.  
+
+The development of SABRA will run in parallel with the R\&D carried out by the GodXilla program, and the outcome of both efforts will be combined in a prototype (pBOLD), will allow a full demonstration of the BOLD concept, and will be a small-scale version (most likely re-using the \NEW\ detector but NEXT-100 is also a possibility) of the proposed ton-scale apparatus.
+ 
+
+\acknowledgments
+We acknowledge the support of our colleagues of the NEXT collaboration in the development of this work as a part of the R\&D program to to develop a background-free experiment based in \Bapp\ tagging. 
+
+%
+\bibliographystyle{unsrt}
+\bibliography{fibrefs}
+
+\end{document}

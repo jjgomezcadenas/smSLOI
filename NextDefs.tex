@@ -1,0 +1,785 @@
+%\usepackage{siunitx}
+%\sisetup{separate-uncertainty=true}
+%\usepackage{xspace}
+
+\newcommand{\BF}[1]{\textbf{#1}\xspace}
+\newcommand{\ITA}[1]{\textit{#1}\xspace}
+
+%REFS
+\newcommand{\sDIPC}{COORD}
+\newcommand{\sIFIC}{MEAN}
+\newcommand{\sUSC}{CALMU}
+\newcommand{\sUPV}{SENSE}
+\newcommand{\NEW}{NEXT-White}
+\newcommand{\NEXT}{NEXT-100}
+\newcommand{\REFS}{\textbf{REFS}}
+\newcommand{\fig}{figure}
+\newcommand{\eq}{equation}
+\newcommand{\tab}{table}
+\newcommand{\Fig}{Figure}
+\newcommand{\Eq}{Equation}
+\newcommand{\Tab}{Table}
+\newcommand{\eg}{{\it e.g.}}
+\newcommand{\ie}{{\it i.e.}}
+
+\newcommand{\XenonLamp}{\SI{365}{nm}}
+\newcommand{\FBIE}{\SI{250}{nm}}
+\newcommand{\SFC}{\SI{2.3E-5}{\milli\mol}}
+\newcommand{\SFD}{\SI{7.4E-8}{\milli\mol}}
+\newcommand{\NFD}{\num{1.3E+15}}
+\newcommand{\NSUB}{\num{7.6E+14}}
+\newcommand{\BandFilter}{\ensuremath{\rm (400-425)~ nm}}
+\newcommand{\GibbsP}{\SI{-80.0}{ kcal/mol}}
+\newcommand{\GibbsPN}{-80.0}
+\newcommand{\GibbsSB}{\SI{-195.9}{ kcal/mol}}
+\newcommand{\GibbsBa}{\SI{-197.5}{ kcal/mol}}
+\newcommand{\BaPer}{\ensuremath{\rm Ba(ClO_4)_2}}
+\newcommand{\CHCN}{\ensuremath{\rm CH_3CN}}
+\newcommand{\blt}{\ensuremath{\bullet}}
+\newcommand{\xmus}{\ensuremath{x^{\mu}}}
+\newcommand{\xmul}{\ensuremath{x_{\mu}}}
+\newcommand{\xnus}{\ensuremath{x^{\nu}}}
+\newcommand{\xnul}{\ensuremath{x_{\nu}}}
+% stats
+\newcommand{\micro}{\ensuremath{\mu}}
+\newcommand{\chitwo}{\ensuremath{\chi^2}}
+\newcommand{\NGA}{\ensuremath{n_\gamma}}
+\newcommand{\stat}{\textrm{(stat.)}}
+\newcommand{\sys}{\textrm{(sys.)}}
+% BB\becquerel
+\newcommand{\bb}{\ensuremath{\beta\beta}}
+\newcommand{\nph}{\ensuremath{n_\gamma}}
+% BB0NU
+\newcommand{\bbonu}{\ensuremath{\beta\beta0\nu}}
+% BB2NU
+\newcommand{\bbtnu}{\ensuremath{\beta\beta2\nu}}
+% NME
+\newcommand{\Mnuc}{\ensuremath{M_{nuc}}}
+\newcommand{\Monu}{\ensuremath{\Big|M_{0\nu}\Big|}}
+\newcommand{\Mtnu}{\ensuremath{\Big|M_{2\nu}\Big|}}
+% PHASE-SPACE FACTOR
+\newcommand{\Gonu}{\ensuremath{G_{0\nu}(\Qbb, Z)}}
+\newcommand{\Gtnu}{\ensuremath{G_{2\nu}(\Qbb, Z)}}
+\newcommand{\tz}{\ensuremath{t_0}}
+\newcommand{\stwo}{\ensuremath{S_2}}
+\newcommand{\sone}{\ensuremath{S_1}}
+\newcommand{\tyear}{\ensuremath{ton\cdot year}}
+
+% mbb
+\newcommand{\mbb}{\ensuremath{m_{\beta\beta}}}
+\newcommand{\kgy}{\ensuremath{\rm kg \cdot y}}
+\newcommand{\ckky}{\ensuremath{\rm counts/(keV \cdot kg \cdot y)}}
+\newcommand{\mbba}{\ensuremath{m_{\beta\beta}^a}}
+\newcommand{\mbbb}{\ensuremath{m_{\beta\beta}^b}}
+\newcommand{\mbbt}{\ensuremath{m_{\beta\beta}^t}}
+\newcommand{\nbb}{\ensuremath{N_{\beta\beta^{0\nu}}}}
+
+%gases
+\newcommand{\NIT}{\ensuremath{N_2}}
+% Qbb
+%\newcommand{\Qbb}{\ensuremath{Q_{\beta\beta}}}
+\newcommand{\Qbb}{\ensuremath{Q}}
+
+%%% U-238
+\newcommand{\URANIUM}{\ensuremath{^{238}\mathrm{U}}}
+%%%% Th-232
+%\newcommand{\THORIUM}{\ensuremath{^{232}\mathrm{Th}}}
+% Tonu
+\newcommand{\Tonu}{\ensuremath{T_{1/2}^{0\nu}}}
+
+% T2nu
+\newcommand{\Ttnu}{\ensuremath{T_{1/2}^{2\nu}}}
+
+% Cs-137
+\newcommand{\CS}{\ensuremath{^{137}}Cs}
+
+% Na-22
+\newcommand{\NA}{\ensuremath{^{22}}Na}
+
+% Ag-110
+\newcommand{\AG}{\ensuremath{^{110m}}Ag}
+
+
+% Bi-214
+\newcommand{\RATT}{\ensuremath{^{226}}Ra}
+%\newcommand{\Bi}{\ensuremath{^{214}}Bi}
+
+% Tl-208
+%\newcommand{\Tl}{\ensuremath{^{208}}Tl}
+
+
+\newcommand{\KR}{\ensuremath{^{83m}\mathrm{Kr}}\xspace}
+
+
+% Th-228
+%\newcommand{\Th}{\ensuremath{^{228}}Th}
+%\newcommand{\THO}{\ensuremath{^{228}}Th}
+% Th-232
+%\newcommand{\232Th}{\ensuremath{^{232}}Th}
+
+% Pb-208
+\newcommand{\PB}{\ensuremath{^{208}}Pb}
+% Pb-208
+\newcommand{\PBD}{\ensuremath{^{210}}Pb}
+
+% Po-214
+\newcommand{\PO}{\ensuremath{^{214}}Po}
+
+% Rn-222
+\newcommand{\RAD}{\ensuremath{^{222}}Rn}
+
+% bru
+\newcommand{\bru}{cts/(keV$\cdot$kg$\cdot$y)}
+
+% Saltos de carro en tablas
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
+
+\newcommand{\thedraft}{0.1.1}% version for referees
+
+\newcommand{\SEVEN}{\ensuremath{\textbf{7}}}
+\newcommand{\FPEAK}{\ensuremath{f_\lambda}}
+\newcommand{\SEVENBA}{\textbf{7}$\cdot Ba^{2+}$}
+\newcommand{\MO}{\ensuremath{{}^{100}{\rm Mo}}}
+\newcommand{\SEL}{\ensuremath{{}^{82}{\rm Se}}}
+\newcommand{\ZR}{\ensuremath{{}^{96}{\rm Zr}}}
+%\newcommand{\KR}{\ensuremath{{}^{83m}{\rm Kr}}}
+\newcommand{\ND}{\ensuremath{{}^{150}{\rm Nd}}}
+\newcommand{\XE}{\ensuremath{{}^{136}\rm Xe}}
+\newcommand{\GE}{\ensuremath{{}^{76}\rm Ge}}
+\newcommand{\GES}{\ensuremath{{}^{68}\rm Ge}}
+\newcommand{\TE}{\ensuremath{{}^{128}\rm Te}}
+\newcommand{\TEX}{\ensuremath{{}^{130}\rm Te}}
+\newcommand{\TL}{\ensuremath{{}^{208}\rm{Tl}}}
+\newcommand{\CA}{\ensuremath{{}^{48}\rm Ca}}
+\newcommand{\CO}{\ensuremath{{}^{60}\rm Co}}
+\newcommand{\COFiftySix}{\ensuremath{{}^{56}\rm Co}}
+\newcommand{\COFiftySeven}{\ensuremath{{}^{57}\rm Co}}
+%\newcommand{\PO}{\ensuremath{{}^{214\rm Po}}}
+%\newcommand{\U}{\ensuremath{{}^{235}\rm U}}
+\newcommand{\CT}{\ensuremath{{}^{10}\rm C}}
+\newcommand{\BE}{\ensuremath{{}^{11}\rm Be}}
+\newcommand{\BO}{\ensuremath{{}^{8}\rm Be}}
+\newcommand{\UDTO}{\ensuremath{\rm {}^{238}\rm U}}
+\newcommand{\CD}{\ensuremath{^{116}{\rm Cd}}}
+\newcommand{\THO}{\ensuremath{\rm {}^{232}{\rm Th}}}
+\newcommand{\TO}{\ensuremath{\rm {}^{228}}Th}
+\newcommand{\RADO}{\ensuremath{^{224}}Ra}
+\newcommand{\BI}{\ensuremath{{}^{214}}Bi}
+\newcommand{\Bapp}{\ensuremath{{\rm Ba^{2+}}}}
+\newcommand{\Bap}{\ensuremath{\rm Ba^{+}}}
+\newcommand{\Rapp}{\ensuremath{\rm Ra^{2+}}}
+\newcommand{\Capp}{\ensuremath{Ca^{++}}}
+\newcommand{\Srpp}{\ensuremath{\rm Sr^{2+}}}
+\newcommand{\Mgpp}{\ensuremath{\rm Mg^{2+}}}
+\newcommand{\Kp}{\ensuremath{\rm K^{+}}}
+\newcommand{\Nap}{\ensuremath{\rm Na^{+}}}
+\newcommand{\CHF}{\ensuremath{\rm CH_4}}
+\newcommand{\RATX}{\ensuremath{\rm {}^{228}}Ra}
+
+% alternative (clearer) definitions
+
+\newcommand{\Ba}[1]{\ensuremath{^{#1}\mathrm{Ba}}\xspace}
+\newcommand{\Bi}[1]{\ensuremath{^{#1}\mathrm{Bi}}\xspace}
+\newcommand{\Co}[1]{\ensuremath{^{#1}\mathrm{Co}}\xspace}
+\newcommand{\Cs}[1]{\ensuremath{^{#1}\mathrm{Cs}}\xspace}
+\newcommand{\Kr}[1]{\ensuremath{^{#1}\mathrm{Kr}}\xspace}
+\newcommand{\K}[1]{\ensuremath{^{#1}\mathrm{K}}\xspace}
+\newcommand{\Na}[1]{\ensuremath{^{#1}\mathrm{Na}}\xspace}
+\newcommand{\Pb}[1]{\ensuremath{^{#1}\mathrm{Pb}}\xspace}
+\newcommand{\Po}[1]{\ensuremath{^{#1}\mathrm{Po}}\xspace}
+\newcommand{\Rb}[1]{\ensuremath{^{#1}\mathrm{Rb}}\xspace}
+%\newcommand{\Rn}[1]{\ensuremath{^{#1}\mathrm{Rn}}\xspace}
+\newcommand{\Th}[1]{\ensuremath{^{#1}\mathrm{Th}}\xspace}
+\newcommand{\Tl}[1]{\ensuremath{^{#1}\mathrm{Tl}}\xspace}
+\newcommand{\U}[1]{\ensuremath{^{#1}\mathrm{U}}\xspace}
+\newcommand{\Xe}[1]{\ensuremath{^{#1}\mathrm{Xe}}\xspace}
+
+\newcommand{\XED}{\ensuremath{Xe \rightarrow Ba^{++} + 2 e^- (+ 2 \nu)}}
+%misc
+
+
+%SI Units
+\DeclareSIUnit\c{\mbox{$c$}}
+\DeclareSIUnit\magn{\mbox{$\times$}}
+\DeclareSIUnit\min{min}
+\DeclareSIUnit\week{week}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\years{years}
+\DeclareSIUnit\yr{yr}
+\DeclareSIUnit\standard{std}
+\DeclareSIUnit\str{sr}
+\DeclareSIUnit\ppm{ppm}
+\DeclareSIUnit\ppb{ppb}
+\DeclareSIUnit\ppt{ppt}
+\DeclareSIUnit\pe{PE}
+\DeclareSIUnit\spe{SPE}
+\DeclareSIUnit\ev{events}
+\DeclareSIUnit\ct{counts}
+\DeclareSIUnit\neutron{\mbox{$n$}}
+\DeclareSIUnit\smp{samples}
+\DeclareSIUnit\Sample{S}
+\DeclareSIUnit\ch{ch}
+\DeclareSIUnit\hit{hit}
+\DeclareSIUnit\hits{hits}
+\DeclareSIUnit\bin{(\mbox{5-PE}~bin)}
+\DeclareSIUnit\sgm{\mbox{$\sigma$}}
+\DeclareSIUnit\rms{RMS}
+\DeclareSIUnit\keVr{\mbox{keV$_{\rm nr}$}}
+\DeclareSIUnit\keVee{\mbox{keV$_{e{\rm e}}$}}
+\DeclareSIUnit\ph{photon}
+\DeclareSIUnit\pes{pes}
+\DeclareSIUnit\el{electrons}
+\DeclareSIUnit\pm{PMT}
+\DeclareSIUnit\inch{"}
+\DeclareSIUnit\bit{bit}
+\DeclareSIUnit\sample{samples}
+\DeclareSIUnit\barn{barn}
+\DeclareSIUnit\bara{bar}
+\DeclareSIUnit\barg{barg}
+\DeclareSIUnit\mlardepth{\mbox(meter~of~\LAr~depth)}
+\DeclareSIUnit\Curie{Ci}
+\DeclareSIUnit\psi{psi}
+\DeclareSIUnit\parsec{pc}
+\DeclareSIUnit\liveday{\mbox{live-days}}
+\DeclareSIUnit\days{\mbox{days}}
+\DeclareSIUnit\day{\mbox{day}}
+\DeclareSIUnit\miles{\mbox{miles}}
+\DeclareSIUnit\degreeC{\mbox{$^{\circ}$C}}
+\DeclareSIUnit\electron{\mbox{$e^-$}}
+\DeclareSIUnit\Euro{\mbox{\euro}}
+\DeclareSIUnit\cph{cph}
+\DeclareSIUnit\neq{neq}
+\DeclareSIUnit\unit{unit}
+\DeclareSIUnit\byte{Byte}
+\DeclareSIUnit\Bq{\becquerel}
+
+
+\newcommand{\REY}{\ensuremath{\frac{Y}{P}}}
+\newcommand{\REF}{\ensuremath{\frac{E}{P}}}
+
+
+\newcommand{\XeScintillationYield}{\SI{13157}{\ph\per\MeV}}
+\newcommand{\XeScintillationQbb}{\SI{32342}{\ph}}
+\newcommand{\ArScintillationYield}{\SI{4E4}{\ph\per\MeV}}
+\newcommand{\TPBWaveLength}{\SI{420}{\nano\meter}}
+\newcommand{\ArWaveLength}{\SI{128}{\nano\meter}}
+\newcommand{\XeWaveLength}{\SI{172}{\nano\meter}}
+\newcommand{\TPBReflectivityInBlue}{\SI{98}{\percent}}
+
+%%%bonu
+
+\newcommand{\IHMass}{\SI{20}{\meV}}
+\newcommand{\IHTz}{\SI{E27}{\yr}}
+\newcommand{\NHMass}{\SI{2}{\meV}}
+\newcommand{\NHTz}{\SI{E29}{\yr}}
+\newcommand{\BackgroundFreeRequirement}{\SI{<0.1}{\ev}}
+\newcommand{\AlmostBackgroundFreeRequirement}{\SI{<1}{\ev}}
+\newcommand{\BackgroundFreeLimit}{\SI{0.1}{\ev}}
+\newcommand{\AlmostBackgroundFreeLimit}{\SI{<1}{\ev}}
+\newcommand{\ZeroBackgroundNinetyPerCentCLEventsLimit}{\SI{2.3}{\ev}}
+\newcommand{\NinetyPerCentCL}{\mbox{\SI{90}{\percent}~C.L.}}
+
+%% Other experiments
+
+
+\newcommand{\GerdaTotalMass}{\SI{35}{\kg}}
+\newcommand{\KZenTz}{\SI{1.07E26}{\yr}}
+\newcommand{\KZenMbb}{\SIrange{61}{165}{\meV}}
+
+% Names
+%\newcommand{\NEXT}{\mbox{NEXT}}
+\newcommand{\New}{\mbox{NEXT-White}}
+\newcommand{\Next}{\mbox{NEXT-100}}
+\newcommand{\NHD}{\mbox{NEXT-HD}}
+\newcommand{\DEMOP}{\mbox{DEMO+}}
+\newcommand{\Ntk}{\mbox{NEXT-2.0}}
+\newcommand{\GXeEL}{GXeEL}
+\newcommand{\HPXe}{HPXe}
+\newcommand{\HPXeEL}{HPXe-EL}
+\newcommand{\CGXe}{CGXe}
+\newcommand{\TPB}{Tetraphenyl Butadiene}
+\newcommand{\PDOT}{Poly-Ethylenedioxythiophene}
+\newcommand{\ITO}{Indium tin-oxyde}
+\newcommand{\RI}{Run I}
+\newcommand{\RII}{Run II}
+\newcommand{\RIII}{Run III}
+\newcommand{\RIV}{Run IV}
+\newcommand{\RV}{Run V}
+
+
+% Quantities
+\newcommand{\XenonDensity}{\SI{5.761}{\kg\per\cubic\meter}}
+\newcommand{\NtkMass}{\SI{576}{\kg}}
+\newcommand{\XenonFanoFactor}{\num{0.15}}
+\newcommand{\XenonEnergyPerElectron}{\SI{21.9}{\eV}}
+\newcommand{\XenonEnergyPerPhoton}{\SI{76}{\eV}}
+\newcommand{\XenonQbb}{\SI{2458}{\keV}}
+\newcommand{\XenonElectronsAtQbb}{\SI{112237}{\el}}
+\newcommand{\neAtQbb}{112237}
+
+\newcommand{\XenonLongitudinalDiffusion}{\ensuremath{0.3\ \textrm{mm}/\sqrt{\textrm{cm}}}}
+\newcommand{\XenonTransverseDiffusion}{\ensuremath{1\ \textrm{mm}/\sqrt{\textrm{cm}}}}
+
+\newcommand{\XenonXRaysAverageEnergy}{\SI{30}{\keV}}
+\newcommand{\XenonXRaysLineAlphaEnergy}{\SI{29.7}{\keV}}
+\newcommand{\XenonXRaysLineAlphaWeightedEnergy}{\SI{29.669}{\keV}}
+\newcommand{\XenonXRaysLineBetaEnergy}{\SI{34}{\keV}}
+\newcommand{\XenonKAlpha}{\ensuremath{K_{\alpha}}}
+\newcommand{\XenonKBeta}{\ensuremath{K_{\beta}}}
+
+
+%Analysis
+
+\newcommand{\NextDriftTimeGeneric}{\SI{1}{\mm\per\micro\second}}
+% Kr
+\newcommand{\simto}{\ensuremath{\sim}}
+
+\newcommand{\VDR}{\ensuremath{v_d}}
+\newcommand{\LT}{\ensuremath{\tau}}
+\newcommand{\SQRE}{\ensuremath{1/\sqrt{E}}}
+\newcommand{\E}{\ensuremath{E}}
+\newcommand{\PR}{\ensuremath{P}}
+\newcommand{\TPT}{\ensuremath{T}}
+\newcommand{\TOX}{\ensuremath{T_0}}
+\newcommand{\PZ}{\ensuremath{P_z}}
+\newcommand{\POX}{\ensuremath{P_0}}
+\newcommand{\ZP}{\ensuremath{Z^P}}
+\newcommand{\ZPOX}{\ensuremath{Z^P_0}}
+\newcommand{\X}{\ensuremath{x}}
+\newcommand{\R}{\ensuremath{r}}
+\newcommand{\Y}{\ensuremath{y}}
+\newcommand{\Z}{\ensuremath{z}}
+\newcommand{\T}{\ensuremath{t}}
+\newcommand{\VD}{\ensuremath{v_d}}
+\newcommand{\QZ}{\ensuremath{q_0}}
+
+\newcommand{\XY}{\ensuremath{(x, y)}}
+\newcommand{\FXY}{\ensuremath{f(x, y)}}
+\newcommand{\QXY}{\ensuremath{q(x, y)}}
+\newcommand{\QXYZ}{\ensuremath{q(x, y, z)}}
+\newcommand{\XYZ}{\ensuremath{(x, y, z)}}
+
+\newcommand{\SE}{\ensuremath{e_s}}
+\newcommand{\SW}{\ensuremath{w_s}}
+\newcommand{\SH}{\ensuremath{h_s}}
+\newcommand{\ST}{\ensuremath{t_s}}
+
+\newcommand{\NewTo}{\SI{293.15}{\kelvin}}
+\newcommand{\NewSevenBarPz}{\num{0.963}}
+\newcommand{\NewNineBarPz}{\num{0.953}}
+\newcommand{\NewPo}{\num{0.995}}
+
+
+
+\newcommand{\StandardLDRunII}{\ensuremath{318.9 \pm 1.8\ \stat\ \pm 20.1\ \sys\ \micro \textrm{m}/\sqrt{\textrm{cm}}}}
+\newcommand{\StandardTDRunII}{\ensuremath{1279 \pm 3\ \stat\ \pm 40\ \sys\ \micro \textrm{m}/\sqrt{\textrm{cm}}}}
+\newcommand{\LDTenBarRunII}{\ensuremath{267.3 \pm 1.5\ \stat\ \pm 16.9\ \sys\ \micro \textrm{m}/\sqrt{\textrm{cm}}}}
+\newcommand{\TDTenBarRunII}{\ensuremath{1072 \pm 3\ \stat\ \pm 34\ \sys\ \micro \textrm{m}/\sqrt{\textrm{cm}}}}
+
+\newcommand{\MCDriftVelocity}{\SI{1}{\mm\per\micro\second}}
+\newcommand{\MCDriftVelocityFitRunII}{\SI[parse-numbers=false]{999.79 \pm 0.05\ \stat\ \pm 1.88\ \sys}{\micro\meter\per\micro\second}}
+\newcommand{\DriftVelocityStandardRunII}{\SI[parse-numbers=false]{967.99 \pm 0.17\ \stat\ \pm 4.06\ \sys}{\micro\meter\per\micro\second}}
+
+\newcommand{\ELVelocitySevenBarRunII}{\SI{3.72 +- 0.03}{\mm\per\micro\second}}
+\newcommand{\ELVelocityNineBarRunII}{\SI{3.52 +- 0.03}{\mm\per\micro\second}}
+
+\newcommand{\TimeToCrossELSevenBarRunII}{\SI{0.806 +- 0.006}{\micro\second}}
+\newcommand{\TimeToCrossELNineBarRunII}{\SI{0.852 +- 0.008}{\micro\second}}
+
+\newcommand{\MaxDriftTimeMC}{\SI{533.12 +- 0.026}{\micro\second}}
+\newcommand{\MaxDriftTimeStandardRunII}{\SI{548.64 +- 0.1}{\micro\second}}
+
+\newcommand{\ResolutionKrFullFourSevenThreeFour}{\SI{4.55 +- 0.01}{\percent}}
+\newcommand{\ResolutionKrFullFourSevenThreeFourQbb}{\SI{0.592 +- 0.001}{\percent}}
+\newcommand{\ResolutionKrFidFourSevenThreeFour}{\SI{3.88 +- 0.04}{\percent}}
+\newcommand{\ResolutionKrFidFourSevenThreeFourQbb}{\SI{0.504 +- 0.005}{\percent}}
+
+\newcommand{\ResolutionKrFullFourEightFourOne}{\SI{4.86 +- 0.01}{\percent}}
+\newcommand{\ResolutionKrFullFourEightFourOneQbb}{\SI{0.631 +- 0.002}{\percent}}
+\newcommand{\ResolutionKrFidFourEightFourOne}{\SI{3.93 +- 0.03}{\percent}}
+\newcommand{\ResolutionKrFidFourEightFourOneQbb}{\SI{0.510 +- 0.004}{\percent}}
+
+\newcommand{\ResolutionKrFullFourSevenThreeFourWithSystematics   }{\SI[parse-numbers=false]{(4.553  \pm 0.010 \ \stat \pm 0.324 \ \sys)}{\percent}}
+\newcommand{\ResolutionKrFullFourSevenThreeFourQbbWithSystematics}{\SI[parse-numbers=false]{(0.5916 \pm 0.0014\ \stat \pm 0.0421\ \sys)}{\percent}}
+\newcommand{\ResolutionKrFidFourSevenThreeFourWithSystematics    }{\SI[parse-numbers=false]{(3.804  \pm 0.013 \ \stat \pm 0.112 \ \sys)}{\percent}}
+\newcommand{\ResolutionKrFidFourSevenThreeFourQbbWithSystematics }{\SI[parse-numbers=false]{(0.4943 \pm 0.0017\ \stat \pm 0.0146\ \sys)}{\percent}}
+
+\newcommand{\ResolutionKrFullFourEightFourOneWithSystematics   }{\SI[parse-numbers=false]{(4.860  \pm 0.013 \ \stat \pm 0.246 \ \sys)}{\percent}}
+\newcommand{\ResolutionKrFullFourEightFourOneQbbWithSystematics}{\SI[parse-numbers=false]{(0.6314 \pm 0.0017\ \stat \pm 0.0320\ \sys)}{\percent}}
+\newcommand{\ResolutionKrFidFourEightFourOneWithSystematics    }{\SI[parse-numbers=false]{(3.927  \pm 0.030 \ \stat \pm 0.148 \ \sys)}{\percent}}
+\newcommand{\ResolutionKrFidFourEightFourOneQbbWithSystematics }{\SI[parse-numbers=false]{(0.5102 \pm 0.0039\ \stat \pm 0.0192\ \sys)}{\percent}}
+
+\newcommand{\KrEnergy}{\SI{41.5}{\keV}}
+\newcommand{\KrEnergyI}{\SI{32.1}{\keV}}
+\newcommand{\KrEnergyII}{\SI{9.4}{\keV}}
+\newcommand{\RbLifetime}{\SI{86.2}{\days}}
+\newcommand{\RbIntensity}{\SI{1}{\kilo\becquerel}}
+\newcommand{\KrLifetime}{\SI{1.83}{\hour}}
+\newcommand{\KrLifetimeShort}{\SI{154.4}{\nano\second}}
+\newcommand{\KrRate}{\SI{10}{\hertz}}
+\newcommand{\KrPmtSumEminRunII}{\SI{5e+3}{\pes}}
+\newcommand{\KrPmtSumEmaxRunII}{\SI{15e+3}{\pes}}
+\newcommand{\KrTriggerEminRunII}{\SI{200}{\pes}}
+\newcommand{\KrSiPMEminRunII}{\SI{5}{\pes}}
+\newcommand{\KrTriggerEmaxRunII}{\SI{1500}{\pes}}
+
+\newcommand{\KrSearchWindow}{\SI{620}{\micro\second}}
+\newcommand{\KrSiPmThreshold}{\SI{10}{\pes}}
+\newcommand{\KrTotVolumeRRunII}{\SI{200}{\mm}}
+\newcommand{\KrFidVolumeRRunII}{\SI{150}{\mm}}
+\newcommand{\KrExtFidVolumeRRunII}{\SI{175}{\mm}}
+\newcommand{\KrFidVolumeZRunII}{\SI{150}{\mm}}
+
+\newcommand{\KryptonLifetimeMapBinsRunII}{\ensuremath{60 \times 60}}
+\newcommand{\KryptonEnergyMapPositionCraterRunII}{\ensuremath{[-50, 50]}}
+\newcommand{\KryptonLifetimeMapBinSizeRunII}{\SI{6.7}{\mm}}
+\newcommand{\KryptonEnergyMapInnerCoronaRunII}{\ensuremath{[-150, 150]}}
+
+\newcommand{\KrXbMinusXt}{\SI{0.7}{\mm}}
+
+%Th Analysis
+\newcommand{\epem}{\ensuremath{e^+ e^-}}
+\newcommand{\SigmaE}{\ensuremath{\sigma_E / E}}
+\newcommand{\NextTrackLengthAtQbb}{\SI{15}{\cm}}
+\newcommand{\TlDoubleEscapePeakEnergy}{\SI{1592.5}{\keV}}
+\newcommand{\TlGammaEnergy}{\SI{2615}{\keV}}
+\newcommand{\CsGammaEnergy}{\SI{661.6}{\keV}}
+\newcommand{\ElectronPositronPair}{\SI{511}{\keV}}
+\newcommand{\NumberOfCoronaSipms}{\num{8}}
+\newcommand{\ThRunIISiPMEnergyThreshold}{\SI{45} photoelectrons}
+\newcommand{\XraypeakRegion}{\ensuremath{\in (28, 32)} keV}
+\newcommand{\CsPhotopeakRegion}{\ensuremath{\in (650,675)} keV}
+\newcommand{\DoubleEscapeRegion}{\ensuremath{\in (1550,1640)} keV}
+\newcommand{\FFZ}{\ensuremath{50~\mathrm{mm} < Z_{\mathrm{min}},\ Z_{\mathrm{max}} < 500~\mathrm{mm}}}
+\newcommand{\FFR}{\ensuremath{R_{\mathrm{max}} < 180~\mathrm{mm}}}
+\newcommand{\RFZ}{\ensuremath{150~\mathrm{mm} < Z_{\mathrm{min}},\ Z_{\mathrm{max}} < 300~\mathrm{mm}}}
+\newcommand{\RFR}{\ensuremath{R_{\mathrm{max}} < 150~\mathrm{mm}}}
+\newcommand{\XRZ}{\ensuremath{160~\mathrm{mm} < Z_{\mathrm{min}},\ Z_{\mathrm{max}} < 300~\mathrm{mm}}}
+\newcommand{\XRR}{\ensuremath{R_{\mathrm{max}} < 150~\mathrm{mm}}}
+\newcommand{\CSZ}{\ensuremath{160~\mathrm{mm} < Z_{\mathrm{min}},\ Z_{\mathrm{max}} < 300~\mathrm{mm}}}
+\newcommand{\CSR}{\ensuremath{R_{\mathrm{max}} < 150~\mathrm{mm}}}
+\newcommand{\THZ}{\ensuremath{160~\mathrm{mm} < Z_{\mathrm{min}},\ Z_{\mathrm{max}} < 300~\mathrm{mm}}}
+\newcommand{\THR}{\ensuremath{R_{\mathrm{max}} < 150~\mathrm{mm}}}
+
+\newcommand{\MinimumEnergyThCsAnalysis}{\SI{250}{\keV}}
+
+\newcommand{\ResolutionXRays}{\SI{5.71 +- 0.4}{\percent}}
+\newcommand{\ResolutionXRaysQbb}{\SI{0.63 +- 0.05}{\percent}}
+\newcommand{\ResolutionCsRF}{\SI{1.45 +- 0.1}{\percent}}
+\newcommand{\ResolutionTlRF}{\SI{1.11 +- 0.1}{\percent}}
+\newcommand{\ResolutionCsRFQbb}{\SI{0.76 +- 0.1}{\percent}}
+\newcommand{\ResolutionTlRFQbb}{\SI{0.89 +- 0.1}{\percent}}
+\newcommand{\ResolutionCsFF}{\SI{1.66 +- 0.05}{\percent}}
+\newcommand{\ResolutionTlFF}{\SI{1.64 +- 0.1}{\percent}}
+\newcommand{\ResolutionCsFFQbb}{\SI{0.86 +- 0.05}{\percent}}
+\newcommand{\ResolutionTlFFQbb}{\SI{1.32 +- 0.1}{\percent}}
+
+\newcommand{\ResolutionMcTlFFQbb}{\SI{0.72}{\percent}}
+\newcommand{\ResolutionMcTlRFQbb}{\SI{0.6}{\percent}}
+
+
+\newcommand{\CsTrkLengthAtSevenBar}{\SI{4}{\cm}}
+\newcommand{\TlTrkLengthAtSevenBarAndFifteenMMVoxels}{\SI{12.6}{\cm}}
+\newcommand{\QbbTrkLengthAtFifteenBarAndFifteenMMVoxels}{\SI{8.4}{\cm}}
+
+%alphas
+\newcommand{\RnTwoTwoTwoAlpha}{\SI{5489}{\keV}}
+\newcommand{\PoTwoOneEightAlpha}{\SI{6002}{\keV}}
+\newcommand{\PoTwoOneFourAlpha}{\SI{7687}{\keV}}
+
+%Misc
+
+\newcommand{\XenonIntrinsicEnergyResolution}{\SI{0.3}{\percent}}
+\newcommand{\NextBestEnergyResolution}{\SI{0.5}{\percent}}
+\newcommand{\NextLongTrackResolution}{\SI{0.7}{\percent}}
+\newcommand{\CXGOperatingTemperature}{\SI{198}{\K}}
+\newcommand{\CXGOperatingPressure}{\SI{1.26}{\bara}}
+\newcommand{\TransverseDiffusionPureXenon}{\SI{10}{\mm\per\sqrt\m}}
+\newcommand{\TransverseDiffusionXeHe}{\SI{2}{\mm\per\sqrt\m}}
+\newcommand{\LINNormalTemperature}{\SI{77}{\kelvin}}
+\newcommand{\AmbientNormalTemperature}{\SI{20}{\celsius}}
+\newcommand{\StandardNormalTemperature}{\SI{293.15}{\kelvin}}
+\newcommand{\PVTI}{316Ti}
+
+% RUN II
+
+\newcommand{\KryptonSevenBarStartRunII}{\DTMdisplaydate{2017}{9}{13}{-1}}
+\newcommand{\KryptonSevenBarEndRunII}{\DTMdisplaydate{2017}{9}{19}{-1}}
+\newcommand{\KryptonNineBarStartRunII}{\DTMdisplaydate{2017}{10}{22}{-1}}
+\newcommand{\KryptonNineBarEndRunII}{\DTMdisplaydate{2017}{10}{29}{-1}}
+
+\newcommand{\RunFourSevenThreeFourDate}{\DTMdisplaydate{2017}{10}{10}{-1}}
+\newcommand{\RunFourSevenThreeFourType}{Kr}
+\newcommand{\RunFourSevenThreeFourTriggers}{\num{2687860}}
+\newcommand{\RunFourSevenThreeFourDuration}{\SI{72}{\hour}}
+\newcommand{\RunFourSevenThreeFourTriggerRate}{\SI{10.5}{\hertz}}
+\newcommand{\RunFourSevenThreeFourAverageLifetime}{\SI{1776}{\micro\second}}
+\newcommand{\RunFourSevenThreeFourCathodeVoltage}{\SI{-28}{\kV}}
+\newcommand{\RunFourSevenThreeFourGateVoltage}{\SI{7.2}{\kV}}
+
+\newcommand{\RunFourSevenThreeFiveType}{Cs/Th}
+\newcommand{\RunFourSevenThreeFiveDuration}{\SI{48.4}{\hour}}
+\newcommand{\RunFourSevenThreeFiveTriggerRate}{\SI{1.83}{\hertz}}
+\newcommand{\RunFourSevenThreeFiveTriggers}{\num{320 039}}
+
+\newcommand{\RunFourSevenThreeSixType}{Kr}
+\newcommand{\RunFourSevenThreeSixDuration}{\SI{2.8}{\hour}}
+\newcommand{\RunFourSevenThreeSixTriggerRate}{\SI{10.4}{\hertz}}
+\newcommand{\RunFourSevenThreeSixTriggers}{\num{106 182}}
+\newcommand{\RunFourSevenThreeSixAverageLifetime}{\SI{1805}{\micro\second}}
+
+\newcommand{\RunFourSevenThreeSevenType}{Cs/Th}
+\newcommand{\RunFourSevenThreeSevenDuration}{\SI{48.1}{\hour}}
+\newcommand{\RunFourSevenThreeSevenTriggerRate}{\SI{1.84}{\hertz}}
+\newcommand{\RunFourSevenThreeSevenTriggers}{\num{320 546}}
+
+\newcommand{\RunFourSevenThreeEightType}{Kr}
+\newcommand{\RunFourSevenThreeEightDuration}{\SI{3.6}{\hour}}
+\newcommand{\RunFourSevenThreeEightTriggerRate}{\SI{10.4}{\hertz}}
+\newcommand{\RunFourSevenThreeEightTriggers}{\num{132 751}}
+\newcommand{\RunFourSevenThreeEightAverageLifetime}{\SI{1820}{\micro\second}}
+
+\newcommand{\RunFourSevenThreeNineType}{Cs/Th}
+\newcommand{\RunFourSevenThreeNineDuration}{\SI{45.4}{\hour}}
+\newcommand{\RunFourSevenThreeNineTriggerRate}{\SI{1.85}{\hertz}}
+\newcommand{\RunFourSevenThreeNineTriggers}{\num{302 961}}
+
+
+\newcommand{\RunFourEightFourOneDate}{\DTMdisplaydate{2017}{11}{12}{-1}}
+\newcommand{\RunFourEightFourOneTriggers}{\num{2993867}}
+\newcommand{\RunFourEightFourOneTriggerRate}{\SI{8.2}{\hertz}}
+\newcommand{\RunFourEightFourOneCathodeVoltage}{\SI{-29.5}{\kV}}
+\newcommand{\RunFourEightFourOneGateVoltage}{\SI{-8.5}{\kV}}
+
+\newcommand{\NewGateVoltageSevenBarRunII}{\SI{-7.0}{\kV}}
+\newcommand{\NewGateVoltageNineBarRunII}{\SI{-8.5}{\kV}}
+\newcommand{\NewCathodeVoltageRunII}{\SI{-27}{\kV}}
+\newcommand{\NewCathodeVoltageSevenBarRunII}{\SI{-28}{\kV}}
+\newcommand{\NewCathodeVoltageNineBarRunII}{\SI{-30}{\kV}}
+
+\newcommand{\NewCathodeVoltageKrDiffSevenBarMinRunII}{\SI{-16}{\kV}}
+\newcommand{\NewCathodeVoltageKrDiffSevenBarMaxRunII}{\SI{-28}{\kV}}
+
+\newcommand{\NewCathodeVoltageKrDiffNineBarMinRunII}{\SI{-21.5}{\kV}}
+\newcommand{\NewCathodeVoltageKrDiffNineBarMaxRunII}{\SI{-29.5}{\kV}}
+
+
+\newcommand{\NewGateVoltageRunII}{\SI{-7.2}{\kV}}
+\newcommand{\NewGateVoltageRunIIMax}{\SI{-10}{\kV}}
+\newcommand{\NewCathodeVoltageAtFifteenBar}{\SI{-41}{\kV}}
+\newcommand{\NewGateVoltageRunIV}{\SI{-8}{\kV}}
+
+\newcommand{\NewCathodeVoltageRunIIMax}{\SI{-30}{\kV}}
+\newcommand{\NewLifetimeMaxRunII}{\SI{2}{\milli\second}}
+\newcommand{\NewSevenBarPressureRunII}{\SI{7.2}{\bar}}
+\newcommand{\NewNineBarPressureRunII}{\SI{9.1}{\bar}}
+\newcommand{\NewTenBarPressureRunIV}{\SI{10.1}{\bar}}
+
+\newcommand{\NewDriftFieldRunII}{\SI{53.6}{\V\per\cm\per\bar}}
+
+% Radon in NEW 
+\newcommand{\RadonNEWColdGetters}{\SI{38.1 +- 2.2}{\milli\becquerel\per\cubic\meter}}
+% NEW
+\newcommand{\NewIntrinsicEnergyResolution}{\SI{0.40}{\percent}}
+\newcommand{\NewIntrinsicEnergyResolutionRunII}{\SI{0.45}{\percent}}
+\newcommand{\NewPressureVesselMaterial}{316Ti}
+\newcommand{\NewPressureVesselActivity}{\SI{1.24}{\milli\becquerel\per\kilo\gram}}
+\newcommand{\NewTpcLength}{\SI{664.5}{\mm}}
+\newcommand{\NewTpcBuffer}{\SI{129.5}{\mm}}
+\newcommand{\NewTpcCathodePosition}{\SI{530.3}{\mm}}
+\newcommand{\NewTpcDriftLength}{\SI{530.3 +- 2}{\mm}}
+\newcommand{\NewTpcDriftLengthNoError}{\SI{530.3}{\mm}}
+\newcommand{\NewResistorsType}{Ohmite HVF 2512}
+\newcommand{\NewResistorsValue}{\SI{1}{\giga\ohm}}
+\newcommand{\NewResistorsVoltage}{\SI{3}{\kilo\volt}}
+\newcommand{\NewFieldCageHDPEThickness}{\SI{21}{\mm}}
+\newcommand{\NewCopperRingsPitch}{\SI{12}{\mm}}
+\newcommand{\NewCopperRingsSection}{\SI{10 x 3}{mm}}
+\newcommand{\NewCopperRingsCurvatureRadius}{\SI{0.5}{mm}}
+\newcommand{\NewMinimumDriftField}{\SI{300}{\V\per\cm}}
+\newcommand{\NewMaximumDriftField}{\SI{600}{\V\per\cm}}
+\newcommand{\NewDriftField}{\SI{400}{\V\per\cm}}
+
+\newcommand{\NewVoltageAtGate}{\SI{-20.0}{\kV}}
+\newcommand{\NewMinimumVField}{\SI{15.6}{\kV}}
+\newcommand{\NewMaximumVField}{\SI{31.2}{\kV}}
+\newcommand{\NewTpcELGap}{\SI{6}{\mm}}
+\newcommand{\NewAnodePlateDiameter}{\SI{522}{\mm}}
+\newcommand{\NewAnodePlateThickness}{\SI{3}{\mm}}
+\newcommand{\NewReducedField}{\SI{2.2}{\kV\per\cm\per\bar}}
+\newcommand{\MaximumLinealReducedField}{\SI{5}{\kV\per\cm\per\bar}}
+\newcommand{\TypicalReducedField}{\SI{2}{\kV\per\cm\per\bar}}
+\newcommand{\NewReducedFieldRunII}{\SI{1.7}{\kV\per\cm\per\bar}}
+\newcommand{\NewELFieldAtFifteenBar}{\SI{27}{\kV\per\cm}}
+\newcommand{\NewGateVoltageAtTenBar}{\SI{-12}{\kV}}
+\newcommand{\NewGateVoltageAtFifteenBar}{\SI{-16.2}{\kV}}
+
+%Anode and Cathode
+\newcommand{\CathodeWireDiameter}{\SI{0.150}{\mm}}
+\newcommand{\CathodeWirePitch}{\SI{10}{\mm}}
+\newcommand{\CathodeOpticalTransparency}{98.5\%}
+\newcommand{\AnodeMeshWireDiameter}{\SI{40}{\micro\meter}}
+\newcommand{\AnodeMeshWirePitch}{\SI{500}{\micro\meter}}
+\newcommand{\AnodeOpticalTransparency}{90\%}
+
+
+% SIPM
+\newcommand{\NewNumberOfSiPM}{\num{1792}}
+\newcommand{\NewDeadSiPM}{\num{3}}
+\newcommand{\NewUnstableSiPM}{\num{6}}
+\newcommand{\NewOutSiPM}{\num{4}}
+\newcommand{\NewTrackingPlaneActiveAndStable}{99 \%}
+\newcommand{\NewNumberOfBoards}{\num{28}}
+\newcommand{\NewNumberOfSiPMPerBoard}{8 x 8}
+\newcommand{\NewSiPMSeries}{SensL C}
+\newcommand{\NewSiPMModel}{MicroFC-10035-SMT-GP}
+\newcommand{\NewSiPMSize}{\SI{1}{\mm\square}}
+\newcommand{\NewSipmPitch}{\SI{10}{\mm}}
+\newcommand{\NewSipmCell}{\SI{35}{\micro\meter}}
+\newcommand{\NewSipmDarkCount}{\SI{100}{\kHz}}
+\newcommand{\NewPhotoelectronsPerSiPM}{\SI{250}{\pes\per\micro\second}}
+\newcommand{\TrackingPlaneToEL}{\SI{8}{\mm}}
+\newcommand{\TrackingPlaneToAnode}{\SI{2}{\mm}}
+\newcommand{\NewTrackingPlaneEndCapThickness}{\SI{120}{\mm}}
+\newcommand{\NewTrackingPlaneConnections}{\num{3600}}
+\newcommand{\NewSiPMDataFlow}{\SI{35}{\mega\byte\per\second}}
+\newcommand{\NewSiPMSampling}{\SI{1}{\micro\second}}
+\newcommand{\NewSiPMSamplingRebinned}{\SI{2}{\micro\second}}
+
+\newcommand{\NewNumberOfPMT}{\num{12}}
+\newcommand{\NewNumberOfCentralPMT}{\num{3}}
+\newcommand{\NewCathodeToPMTs}{\SI{130}{\mm}}
+\newcommand{\NewPMTDigiSpeed}{\SI{40}{\mega\hertz}}
+\newcommand{\NewPMTDataFlow}{\SI{10}{\mega\byte\per\second}}
+\newcommand{\NewPMTADCBits}{\num{12}}
+\newcommand{\NewPMTSampling}{\SI{25}{\nano\second}}
+
+
+%Trigger
+\newcommand{\NewTriggerRateBase}{\SI{10}{\hertz}}
+\newcommand{\NewMaxTriggerBuffer}{\SI{3.2}{\milli\second}}
+% TPC
+\newcommand{\NewTpcRadius}{\SI{217.5}{\mm}}
+\newcommand{\NewTpcDiameter}{\SI{454}{\mm}}
+\newcommand{\NewFiducialMass}{\SI{5}{\kg}}
+\newcommand{\NewFiducialMassSevenBar}{\SI{2.3}{\kg}}
+\newcommand{\NewFiducialMassNineBar}{\SI{3}{\kg}}
+\newcommand{\NewPressure}{\SI{15}{\bar}}
+\newcommand{\NewMinimumPressure}{\SI{10}{\bar}}
+
+\newcommand{\NewPSVolume}{\SI{225}{\liter}}
+\newcommand{\NewMainPSVolume}{\SI{140}{\liter}}
+\newcommand{\NewGasLoopVolume}{\SI{45}{\liter}}
+\newcommand{\NewCompressorVolume}{\SI{40}{\liter}}
+\newcommand{\NewFirstBottleVolume}{\SI{69}{\liter}}
+\newcommand{\NewSecondBottleVolume}{\SI{61}{\liter}}
+\newcommand{\NewFirstBottleXenonMass}{\SI{80}{\kg}}
+\newcommand{\NewSecondBottleXenonMass}{\SI{100}{\kg}}
+\newcommand{\NewMaxPressure}{\SI{20}{\bar}}
+\newcommand{\NewGetterPressure}{\SI{10}{\bar}}
+\newcommand{\NewPressureVesselLength}{\SI{950}{\mm}}
+\newcommand{\NewPressureVesselDiameter}{\SI{640}{\mm}}
+
+\newcommand{\NewPressureVesselBarrelThickness}{\SI{12}{\mm}}
+\newcommand{\NewColdGetters}{SAES MC4500-902}
+\newcommand{\NewHotGetters}{SAES PS4-MT50-R-535}
+\newcommand{\NewCompressorMinimumInletPressure}{\SI{5}{\bar}}
+\newcommand{\NewCompressorMaximumInletPressure}{\SI{10}{\bar}}
+\newcommand{\NewCompressorMaximumOutletPressure}{\SI{25}{\bar}}
+\newcommand{\CompressorLeakRatePerYear}{\SI{0.19}{\g\per\year}}
+\newcommand{\NewExpansionTankVolume}{\SI{3}{\cubic\meter}}
+
+% EP
+\newcommand{\NewPmtEndCapThickness}{\SI{120}{\mm}}
+\newcommand{\NEXTPmtEndCapThickness}{\SI{120}{\mm}}
+\newcommand{\NewTypePMT}{Hamamatsu R11410-10}
+\newcommand{\NewPMTCoverage}{31\%}
+\newcommand{\NewOneDotFiveMuFCapacitorsActivity}{\SI{72 +- 3}{\micro\becquerel\per\unit}}
+\newcommand{\NewFourDotSeveMuFCapacitorsActivity}{\SI{123 +- 7}{\micro\becquerel\per\unit}}
+\newcommand{\NewFinechemResistorsActivity}{\SI{4.1 +- 0.3}{\micro\becquerel\per\unit}}
+\newcommand{\NewBasePinActivity}{\SI{<1.1}{\micro\becquerel\per\unit}}
+\newcommand{\NewBaseEpoxy}{\SI{<1.4}{\milli\becquerel\per\kilogram}}
+\newcommand{\NewBaseCable}{\SI{46.8 +-
+    3.3}{\milli\becquerel\per\kilogram}}
+\newcommand{\NewBaseCableUnit}{\SI{0.55 +- 0.04}{\milli\becquerel\per\unit}}
+\newcommand{\NewBaseSubstrate}{\SI{<23}{\micro\becquerel\per\unit}}
+\newcommand{\NewBaseCopperCup}{\SI{<12}{\micro\becquerel\per\unit}}
+\newcommand{\NewKOAResistorsActivity}{\SI{<7.7}{\micro\becquerel\per\unit}}
+\newcommand{\NewPMTActivity}{\SI{0.37 +- 0.08}{\milli\becquerel\per\unit}}
+\newcommand{\NewPMTBaseActivity}{\SI{<1.2}{\milli\becquerel\per\unit}}
+\newcommand{\NEXTPMTBaseActivity}{\SI{<1.2}{\milli\becquerel\per\unit}}
+
+\newcommand{\NewPMTNIT}{\SI{1}{\bar}}
+\newcommand{\NewK}{0.016}
+\newcommand{\NewPMTOperatingVoltage}{\SI{1.23}{\kV}}
+\newcommand{\NewPMTPhotoelectronEfficiency}{1\%}
+\newcommand{\NEXTPMTPhotoelectronEfficiency}{1\%}
+\newcommand{\NewPMTGlue}{NyoGel OCK-451}
+\newcommand{\NewEnergyPlaneLedPulse}{\SI{50}{\micro\second}}
+
+\newcommand{\NewBarrelICS}{\SI{60}{\mm}}
+\newcommand{\NEXTBarrelICS}{\SI{60}{\mm}}
+\newcommand{\NewPlatesICS}{\SI{120}{\mm}}
+\newcommand{\NEXTPlatesICS}{\SI{120}{\mm}}
+\newcommand{\FC}{\ensuremath{\rm f_{cutoff}}}
+
+%NEXT
+\newcommand{\XeEnrichment}{\SI{90}{\percent}}
+\newcommand{\NextTypePMT}{R1141-10}
+
+\newcommand{\NextTpcDiameter}{\SI{1050}{\mm}}
+\newcommand{\NextTpcLength}{\SI{1300}{\mm}}
+\newcommand{\NextFiducialVolume}{\SI{1.27}{\cubic\meter}}
+\newcommand{\NextTotalVolume}{\SI{1.14}{\cubic\meter}}
+\newcommand{\NextFiducialMass}{\SI{97}{\kg}}
+\newcommand{\NextTotalMass}{\SI{109}{\kg}}
+\newcommand{\NextPressure}{\SI{15}{\bar}}
+\newcommand{\NextTemperature}{\SI{293}{\K}}
+\newcommand{\NextDensity}{\SI{0.09}{\g\per\cubic\cm}}
+\newcommand{\NextMaxPressure}{\SI{20}{\bar}}
+\newcommand{\NextBufferDistance}{\SI{10}{\cm}}
+
+\newcommand{\NextSiPMSizeTP}{\SI[product-units=power]{1 x 1}{\square\mm}}
+\newcommand{\NextSiPMPeakPDEWavelength}{\SI{440}{\nm}}
+\newcommand{\NextNumberOfSiPM}{\num{5600}}
+\newcommand{\NextNumberOfPMT}{\num{60}}
+\newcommand{\NextCoverage}{\SI{30}{\percent}}
+\newcommand{\NextCathodeVoltage}{\SI{-52.5}{\kV}}
+\newcommand{\NextDriftField}{\SI{300}{\V\per\cm}}
+\newcommand{\NextELFieldAtTenBar}{\SI{22}{\kV\per\cm}}
+\newcommand{\NextELFieldAtFifteenBar}{\SI{26}{\kV\per\cm}}
+\newcommand{\NextELVoltageAtTenBarAndFiveMM}{\SI{11}{\kV}}
+\newcommand{\NextELVoltageAtFifteenBarAndFiveMM}{\SI{13}{\kV}}
+\newcommand{\NextAnodeVoltage}{\SI{-13.5}{\kV}}
+\newcommand{\NextOpticalGain}{\SI{1000}{\ph\per\el}}
+\newcommand{\NextSipmPDE}{\SI{41}{\percent}}
+\newcommand{\NextSipmDCR}{\SI{70}{\kilo\hertz\per\square\mm}}
+\newcommand{\NextBackgroundLevel}{$4\times 10^{-4}$\ckky }
+\newcommand{\NextSensitivity}{$6\times 10^{25}$~yr}
+\newcommand{\NextExposure}{275~kg$\cdot$yr}
+\newcommand{\NextRadonExpected}{$<0.7$~counts/yr}
+
+% NtK
+\newcommand{\NtkOperatingTemperature}{\SI{175}{\K}}
+\newcommand{\NtkMinimumTemperature}{\SI{185}{\K}}
+\newcommand{\NtkOperatingPressure}{\SI{5.1}{\bara}}
+\newcommand{\NtkMaximumPressure}{\SI{15}{\bara}}
+\newcommand{\NtkTimesNext}{5}
+\newcommand{\NtkTotalMass}{\SI{584}{\kg}}
+\newcommand{\NtkFiducialMass}{\SI{580}{\kg}}
+\newcommand{\NtkDiameter}{\SI{200}{\cm}}
+\newcommand{\NtkHeight}{\SI{200}{\cm}}
+\newcommand{\NtkCathodeVoltage}{\SI{-37.5}{\kV}}
+\newcommand{\NtkDriftLength}{\SI{100}{\cm}}
+\newcommand{\NtkAnodeVoltage}{\SI{-15}{\kV}}
+\newcommand{\NtkDriftVoltage}{\SI{300}{\V\per\cm}}
+\newcommand{\NtkExposure}{\SI{5}{\tonne\year}}
+\newcommand{\NtkRunTimePlanned}{\SI{5}{\year}}
+\newcommand{\NtkOptimalDensity}{\SI{0.055}{\g\per\cubic\cm}}
+\newcommand{\NtkMaximumDensity}{\SI{0.300}{\g\per\cubic\cm}}
+\newcommand{\NtkProtoDensity}{\SI{0.09}{\g\per\cubic\cm}}
+\newcommand{\NtkOpticalGain}{\SI{E3}{\ph\per\el}}
+\newcommand{\NtkNumberOfSiPMPerPlane}{\num{58E3}}
+\newcommand{\NtkNumberOfSiPM}{\num{116E3}}
+\newcommand{\NtkNumberOfASICSPerPlane}{1910}
+\newcommand{\NtkSipmDCR}{\SI{10}{\Hz\per\square\mm}}
